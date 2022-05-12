@@ -4,7 +4,13 @@ const sequelize = new Sequelize('weatherapp', 'root', '1708', {
     dialect: 'mysql'
 })
 
-const Location = sequelize.define('Location', {
+const Location = sequelize.define('Locations', {
+    id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        autoIncrement: true,
+        primaryKey: true
+    },
     location: {
         type: DataTypes.STRING,
         allowNull: false
@@ -22,6 +28,10 @@ const Location = sequelize.define('Location', {
         allowNull: false
     },
     createdAt: {
+        type: DataTypes.DATE,
+        defaultValue: Date.now()
+    },
+    updatedAt: {
         type: DataTypes.DATE,
         defaultValue: Date.now()
     }
