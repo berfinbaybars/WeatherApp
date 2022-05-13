@@ -1,8 +1,5 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = new Sequelize('weatherapp', 'root', '1708', {
-    host: 'localhost',
-    dialect: 'mysql'
-})
+const { DataTypes } = require('sequelize');
+const { sequelize } = require('../config/database');
 
 const Location = sequelize.define('Locations', {
     id: {
