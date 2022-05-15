@@ -12,7 +12,7 @@
 ```
 
 ### Execution
-#### You need to execute both frontend and backend in order to make this app work flawlessly. Use seperate terminals to execute each.
+#### You need to execute both frontend and backend applications in order to make this app work flawlessly. Use seperate terminals to execute each.
 
 ```bash
     ...\WeatherApp> npm start
