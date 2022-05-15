@@ -20,3 +20,6 @@
 ```bash
     ...\WeatherApp\client\weatherapp> npm start
 ```
+
+### Notes
+#### You need to change the database settings or you will encounter errors. For this, go to WeatherApp\config\database.js.
