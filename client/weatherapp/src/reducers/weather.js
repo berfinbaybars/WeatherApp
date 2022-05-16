@@ -1,9 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { GET_WEATHER } from "../actions/types"
+import { GET_WEATHER, ERROR_WEATHER } from "../actions/types"
 
 const initialState = {
     weather:{},
-    loading: true
+    loading: true,
+    error: false
 }
 
 export default (state = initialState, action) => {
@@ -13,7 +14,15 @@ export default (state = initialState, action) => {
             return {
                 ...state,
                 weather: payload,
-                loading: false
+                loading: false,
+                error:false
+            }
+        case ERROR_WEATHER:
+            return {
+                ...state,
+                weather: {},
+                loading: true,
+                error: true
             }
         default:
             return {

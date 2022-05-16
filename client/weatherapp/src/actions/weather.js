@@ -1,4 +1,4 @@
-import { GET_WEATHER } from "./types"
+import { GET_WEATHER, ERROR_WEATHER } from "./types"
 import api from "../utils/api"
 
 export const getWeather = (location) => async dispatch => {
@@ -11,10 +11,9 @@ export const getWeather = (location) => async dispatch => {
         })
     }
     catch(error){
-        // error action will be added
         console.log(error);
         dispatch({
-            type: GET_WEATHER,
+            type: ERROR_WEATHER,
             payload: {}
         })
     }

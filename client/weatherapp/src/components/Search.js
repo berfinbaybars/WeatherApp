@@ -6,7 +6,7 @@ import { getWeather } from '../actions/weather';
 import Weather from './Weather';
 mapboxgl.accessToken = "pk.eyJ1IjoibXhibXhiIiwiYSI6ImNsMzRmcDVkajBoNTYza3BveHI1MnhrMTkifQ.OOqXLE5s0a4WcHQ-8KjASw"
 
-const Search = ({getWeather, weather: {weather, loading}}) => {
+const Search = ({getWeather, weather: {weather, loading, error}}) => {
 
     const mapContainer = useRef(null);
     const map = useRef(null);
@@ -47,6 +47,12 @@ const Search = ({getWeather, weather: {weather, loading}}) => {
             <br />
             <Fragment>
                 {!loading && <Weather weather={weather} />}
+                {
+                    error && 
+                        <div className="alert alert-danger">
+                            Something went wrong!
+                        </div>
+                }
             </Fragment>
         </div>
     )
